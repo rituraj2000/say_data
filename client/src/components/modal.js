@@ -24,13 +24,8 @@ const TranscriptionModal = ({
 
       try {
         const response = await axios.post(
-          "https://trancriber-backend.onrender.com/transcribe",
+        "https://trancriber-backend.onrender.com/transcribe",
           formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
         );
         setTranscription(response.data.transcription);
 
