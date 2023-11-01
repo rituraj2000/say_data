@@ -35,6 +35,7 @@ app.post("/transcribe", upload.single("audio"), async (req, res) => {
       {
         headers: {
           Authorization: `Bearer ${OPENAI_API_KEY}`,
+          'OpenAI-Organization': 'org-6L3dBvl78AdY4WmYRT5Q5UEq',
         },
       }
     );
