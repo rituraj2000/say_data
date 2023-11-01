@@ -20,7 +20,7 @@ app.post("/transcribe", upload.single("audio"), async (req, res) => {
   }
 
   // OpenAI API key should be set in environment variables for security
-  const OPENAI_API_KEY = "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";
+  const OPENAI_API_KEY = process.env.KEY;
   const model = "whisper-1";
 
   const formData = new FormData();
