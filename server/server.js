@@ -5,8 +5,8 @@ const axios = require("axios");
 const FormData = require("form-data");
 const fs = require("fs");
 const cors = require("cors");
-
 const app = express();
+require("dotenv").config();
 
 // Multer setup for handling multipart/form-data
 const storage = multer.memoryStorage();
@@ -20,6 +20,7 @@ app.post("/transcribe", upload.single("audio"), async (req, res) => {
   }
 
   // OpenAI API key should be set in environment variables for security
+  // const OPENAI_API_KEY = process.env.KEY;
   const OPENAI_API_KEY = process.env.KEY;
   const model = "whisper-1";
 

@@ -24,7 +24,7 @@ const TranscriptionModal = ({
 
       try {
         const response = await axios.post(
-          "https://trancriber-backend.onrender.com/transcribe",
+          "http://localhost:5000/transcribe",
           formData,
           {
             headers: {
