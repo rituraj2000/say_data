@@ -28,6 +28,7 @@ app.post("/transcribe", upload.single("audio"), async (req, res) => {
   formData.append("model", model);
   formData.append("file", req.file.buffer, req.file.originalname);
 
+ 
   try {
     const response = await axios.post(
       "https://api.openai.com/v1/audio/transcriptions",
@@ -44,7 +45,7 @@ app.post("/transcribe", upload.single("audio"), async (req, res) => {
     res.json({ transcription: response.data.text });
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error during transcription");
+    res.status(500).send(error);
   }
 });
 
